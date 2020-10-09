@@ -96,3 +96,14 @@ Perforce / Helix P4 is now installed. As stated in the output, the service isn't
 The following options can be configured to ones liking, using the default values is fine, too. At the end of the configuration mode you will be asked to create a user and a password for the super user.
 
 The setup is now complete and a summary of the configuration options will be displayed. You should now be able to connect to your P4 server via P4V.
+
+### Connecting & Further Steps
+
+You should now be able to connect to your server via P4V. By default SSL is enabled and (if not chosen otherwise in the configuration step before) the port 1666 is being used. Your server address to connect to will look like this:
+
+`ssl:IPADDRESS:1666`
+
+After the connection was successfull there are a few things that should be done now:
+
+1) Add a typemap - especially for UE4 projects this is very helpful.
+2) Add new users and add them to appropriate groups. Token-based logins are enabled on a group level, not per user.
