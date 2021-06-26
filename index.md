@@ -131,4 +131,6 @@ The XML file will have an entry named "RecentConnections". Either delete the ent
  </StringList>
 ```
 
+Deleting the ApplicationSettings.xml does work as well, however, this resets all the settings within P4V. A new ApplicationSettings.xml will be created when starting up P4V.
+
 
