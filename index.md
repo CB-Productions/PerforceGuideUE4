@@ -107,3 +107,24 @@ After the connection was successfull there are a few things that should be done 
 
 1) Add a typemap - especially for UE4 projects this is very helpful.
 2) Add new users and add them to appropriate groups. Token-based logins are enabled on a group level, not per user.
+
+### Reconnecting after deleted server
+
+`Unable to connect to the server as user "
+Try reconnecting to the server?`
+
+If for some recent the Perforce server gets shut down or cannot be reached, P4V will try to always recconect to it upon startup. The only options available are "Close P4V" or "Reconnect". To be able to bring up P4V and connect to another server, the recent connections list needs to be cleared. To reset the last connection, do the following:
+
+Quit P4V. For Windows 10 navigate to the folder (Linux might differ):
+
+`%USERPROFILE%\.p4qt\`
+
+Open the file "ApplicationSettings.xml".
+
+The XML file will have an entry named "RecentConnections". Either delete the entry that is causing the issue or simply delete all entries:
+
+`<StringList varName="RecentConnections">
+   <String>IPADDRESS, USERNAME, WORKSPACE</String>
+ </StringList>`
+
+
