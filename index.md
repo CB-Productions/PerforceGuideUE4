@@ -133,4 +133,29 @@ The XML file will have an entry named "RecentConnections". Either delete the ent
 
 Deleting the ApplicationSettings.xml does work as well, however, this resets all the settings within P4V. A new ApplicationSettings.xml will be created when starting up P4V.
 
+### Expired SSL Certitificate 
 
+After 2 years using the Perforce server the SSL certificate might expire. When trying to connect you will receive the error:
+
+`Certificate date range invalid.`
+
+In that case the SSL certificate needs to be renewed. To do that connect to your server and switch to the Perforce user:
+
+`su perforce`
+
+Switch to the SSL directory within your Perforce install diretory and remove the `certificate.txt` and the `privatekey.txt` files.
+
+```
+cd /opt/perforce/servers/"SERVER_NAME"/root/ssl
+rm privatekey.txt
+rm certificate.txt
+```
+
+Set `P4SSLDIR` to the correct directory and generate a new certificate. Make sure to 
+
+```
+export P4SSLDIR=/opt/perforce/servers/"SERVER_NAME"/root/ssl
+p4d -Gc
+```
+
+Running `ls` should now show the `certificate.txt` and the `privatekey.txt` be created again. Restart the Perforce server and it should work again.
