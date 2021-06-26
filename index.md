@@ -110,8 +110,10 @@ After the connection was successfull there are a few things that should be done 
 
 ### Reconnecting after deleted server
 
-`Unable to connect to the server as user "
-Try reconnecting to the server?`
+```
+Unable to connect to the server as user "
+Try reconnecting to the server?
+```
 
 If for some recent the Perforce server gets shut down or cannot be reached, P4V will try to always recconect to it upon startup. The only options available are "Close P4V" or "Reconnect". To be able to bring up P4V and connect to another server, the recent connections list needs to be cleared. To reset the last connection, do the following:
 
@@ -123,8 +125,10 @@ Open the file "ApplicationSettings.xml".
 
 The XML file will have an entry named "RecentConnections". Either delete the entry that is causing the issue or simply delete all entries:
 
-`<StringList varName="RecentConnections">
+```
+<StringList varName="RecentConnections">
    <String>IPADDRESS, USERNAME, WORKSPACE</String>
- </StringList>`
+ </StringList>
+```
 
 
