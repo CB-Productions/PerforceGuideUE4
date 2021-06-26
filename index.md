@@ -123,7 +123,7 @@ Quit P4V. For Windows 10 navigate to the folder (Linux might differ):
 
 Open the file "ApplicationSettings.xml".
 
-The XML file will have an entry named "RecentConnections". Either delete the entry that is causing the issue or simply delete all entries:
+The XML file will have an entry named "RecentConnections". Either delete the entry that is causing the issue or simply delete all entries. Also delete the entries "LastConnection" and "LastRemoteConnection".
 
 ```
 <StringList varName="RecentConnections">
