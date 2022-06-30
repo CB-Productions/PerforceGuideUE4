@@ -159,3 +159,11 @@ p4d -Gc
 ```
 
 Running `ls` should now show the `certificate.txt` and the `privatekey.txt` be created again. Restart the Perforce server and it should work again.
+
+### Connection Issue in P4V - reset last connection
+
+Under certain circumstances P4V can get into a state, where it cannot be properly launched anymore. This can happen if P4V tries to open a connection to the last server it was connected to on startup (this is an option you can turn and off). If the server is unreachable, you only have two buttons: "Reconnect" or "Close P4V". Both of which won't do you any good. In this scenario, the last connection needs to be reset. To do that, navigate to the folder:
+
+`%USERPROFILE%\.p4qt\`
+
+Open the file `ApplicationSettings.xml`. Feel free to create a backup of this file, since we are going to edit it. Find the appropriate instances where the previous server is mentioned. Alternatively the `ApplicationSettings.xml` can be deleted. It will be created again when starting P4V, but keep in mind that this will reset the Application Settings saved within that file.
